@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "totem";
+  src: url("./fonts/totem.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.texto{
+  font-family: "totem", sans-serif;
+  font-size: 80px;
+  color: #235025;
+  margin: 20px;
+  text-align: center;
+}
