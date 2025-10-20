@@ -1,7 +1,11 @@
 {
   "name": "atencion-turnos",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Aplicación de atención de turnos desarrollada con React y Electron",
+  "author": "Lucas Laborde",
   "private": true,
+  "main": "main.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -16,13 +20,32 @@
     "start": "set PORT=3003 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "npm run build && electron .",
+    "dist": "npm run build && npx electron-builder"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "electron": "^38.2.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.atencion.turnos",
+    "productName": "Atencion Turnos",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      "build/**/*"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "icono.ico"
+    }
   },
   "browserslist": {
     "production": [
